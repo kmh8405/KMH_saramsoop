@@ -15,6 +15,7 @@ namespace backend.Models
         /// 직급 ID (Primary Key)
         /// </summary>
         [Key]
+        [Column("id")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
