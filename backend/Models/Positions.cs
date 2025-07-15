@@ -15,6 +15,7 @@ namespace backend.Models
         /// 직급 ID (Primary Key)
         /// </summary>
         [Key]
+        [Column("id")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
@@ -37,6 +38,7 @@ namespace backend.Models
         /// 부가 설명
         /// </summary>
         [StringLength(255)]
+        [Column("description")]
         public string Description { get; set; }
 
         /// <summary>
