@@ -11,10 +11,10 @@ namespace backend.Controllers
     //[Authorize]
     public class ApprovalController : ControllerBase
     {
-        private readonly IApprovalService _approvalService;
+        private readonly ApprovalService _approvalService;
         private readonly ILogger<ApprovalController> _logger;
 
-        public ApprovalController(IApprovalService approvalService, ILogger<ApprovalController> logger)
+        public ApprovalController(ApprovalService approvalService, ILogger<ApprovalController> logger)
         {
             _approvalService = approvalService;
             _logger = logger;
@@ -30,6 +30,9 @@ namespace backend.Controllers
             {
                 var userId = GetCurrentUserId();
                 var userRole = GetCurrentUserRole();
+
+                Console.WriteLine("userRole::" + userRole);
+                Console.WriteLine("userId::" + userId);
 
                 request.UserId = userId;
                 request.Role = userRole;
@@ -60,15 +63,19 @@ namespace backend.Controllers
                 }
 
                 // 권한 확인
-                var userId = GetCurrentUserId();
-                var userRole = GetCurrentUserRole();
+                //var userId = GetCurrentUserId();
+                var userId = "EMP001";
+                //var userRole = GetCurrentUserRole();
+                var userRole = "ADMIN";
+                Console.WriteLine("userRole::" + userRole);
+                Console.WriteLine("userId::" + userId);
 
-                if (userRole != "ADMIN" &&
-                    approval.RequesterId != userId &&
-                    approval.ApproverId != userId)
-                {
-                    return Forbid();
-                }
+                //if (userRole != "ADMIN" &&
+                //    approval.RequesterId != userId &&
+                //    approval.ApproverId != userId)
+                //{
+                //    return Forbid();
+                //}
 
                 return Ok(approval);
             }
