@@ -10,41 +10,41 @@ const AppRouter: RouteObject[] = [
   {
     path: '/approvals',
     element: (
-      <ProtectedRoute requiredRoles={['Employee','Admin','Manager']}>
+      // <ProtectedRoute requiredRoles={['Employee','Admin','Manager']}>
         <Layout>
           <Approvals />
         </Layout>
-      </ProtectedRoute>
+      // </ProtectedRoute>
     ),
   },
   {
     path: '/approvalAdmin',
     element: (
-      <ProtectedRoute requiredRoles={['Employee','Admin','Manager']}>
+      // <ProtectedRoute requiredRoles={['Employee','Admin','Manager']}>
         <Layout>
           <ApprovalAdmin />
         </Layout>
-      </ProtectedRoute>
+      // </ProtectedRoute>
     ),
   },
   {
     path: '/approval/:id',
     element: (
-      <ProtectedRoute requiredRoles={['Employee','Admin','Manager']}>
+      // <ProtectedRoute requiredRoles={['Employee','Admin','Manager']}>
         <Layout>
           <ApprovalDetail />
         </Layout>
-      </ProtectedRoute>
+      // </ProtectedRoute>
     ),
   },
   { //결재 요청
     path: '/approval/request',
     element: (
-      <ProtectedRoute requiredRoles={['Employee','Admin','Manager']}>
+      // <ProtectedRoute requiredRoles={['Employee','Admin','Manager']}>
         <Layout>
           <ApprovalRequest />
         </Layout>
-      </ProtectedRoute>
+      // </ProtectedRoute>
     ),
   },
 ];
